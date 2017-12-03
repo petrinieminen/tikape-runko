@@ -1,0 +1,23 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title th:text="${smoothie.nimi}">Name of the smotohie</title>
+    </head>
+    <body>
+
+        <h2 th:text="${smoothie.nimi}">Name of the smoothie</h2>
+
+        <ul>
+            <li th:each="aine : ${aineet}">
+                    <span th:text="${aine.nimi}">nimi</span>, <span th:text="${aine.maara}">maara</span>
+            </li>
+        </ul>
+
+<ul>
+    <li>
+        <a href="../../">Smoothielistaukseen</a>
+    </li>
+</ul>
+
+</body></html>

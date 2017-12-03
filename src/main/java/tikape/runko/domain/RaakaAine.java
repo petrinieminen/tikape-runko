@@ -1,11 +1,20 @@
 package tikape.runko.domain;
 
-public class Opiskelija {
+public class RaakaAine {
 
     private Integer id;
     private String nimi;
+    String maara;
 
-    public Opiskelija(Integer id, String nimi) {
+    public String getMaara() {
+        return maara;
+    }
+
+    public void setMaara(String maara) {
+        this.maara = maara;
+    }
+
+    public RaakaAine(Integer id, String nimi) {
         this.id = id;
         this.nimi = nimi;
     }
