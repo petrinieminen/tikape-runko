@@ -41,7 +41,6 @@ public class AnnosRaakaAineDao implements Dao<SmoothieRaakaAine, Integer> {
         
         List<RaakaAine> aineet = new ArrayList<>();
         while (rs.next()) {
-            System.out.println(rs.getString("nimi"));
             Integer id = rs.getInt("id");
             String nimi = rs.getString("nimi");
             RaakaAine temp = new RaakaAine(id, nimi);

@@ -92,19 +92,11 @@ public class Main {
         
         get("/smoothiet/:id/", (req, res) -> {
             HashMap map = new HashMap<>();
-            System.out.println(Integer.parseInt(req.params("id")));
-            map.put("aineet", annosRaakaAineDao.listaaRaakaAineetAnnokselle(Integer.parseInt(req.params("id"))));
+               map.put("aineet", annosRaakaAineDao.listaaRaakaAineetAnnokselle(Integer.parseInt(req.params("id"))));
             map.put("smoothie", smoothieDao.findOne(Integer.parseInt(req.params("id"))));
             return new ModelAndView(map, "smoothie");
         }, new ThymeleafTemplateEngine());
-        
-        post("/ainekset/:id/poista", (req, res) -> {
-            raakaAineDao.delete(Integer.parseInt(req.params("id")));
-            System.out.println("joo poistoon");
-            res.redirect("/ainekset");
-            return "joo";
-        });
-        
+               
         get("/ainekset/:id", (req, res) -> {
             HashMap map = new HashMap<>();
             map.put("ingredient", raakaAineDao.findOne(Integer.parseInt(req.params("id"))));

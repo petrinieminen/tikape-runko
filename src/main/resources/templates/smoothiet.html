@@ -6,7 +6,7 @@
         <meta charset="utf-8" />
     </head>
 
-    <body>
+    <body style='font-family="sans-serif"'>
         <h2>Smoothiet</h2>
 
         <ul>
@@ -21,20 +21,27 @@
             <input type="text" name="smoothieName" /><br/>
             <input type="submit" name="nappi" value="addSmoothie"/>
         </form>
+        <br/>
         <form method="POST" action="" >
-            <select name="smoothieId"> 
+            <label for="smoothieSel">Smoothie</label><br/>
+            <select id="smoothieSel" name="smoothieId"> 
                 <option th:each="smoothie: ${smoothies}" th:value="${smoothie.id}" th:text="${smoothie.nimi}">smoothie</option></select><br/>
-            <select name="ingredientId"> 
+                <label for="ingredientSel">Aines-osa</label><br/>
+            <select id="ingredientSel" name="ingredientId"> 
                 <option th:each="ingredient: ${ingredients}" th:value="${ingredient.id}" th:text="${ingredient.nimi}">ingredient</option></select><br/>
-            <input type="text" name="Order" /><br/>
-            <input type="text" name="Quantity" /><br/>
-            <input type="text" name="Info" /><br/>          
+                <label for="ord">Jarjestys</label><br/>
+            <input id="ord" type="text" name="Order" /><br/>
+            <label for="qua">Maara</label><br/>
+            <input id="qua" type="text" name="Quantity" /><br/>
+            <label for="inf">Ohje</label><br/>
+            <input id="inf" type="text" name="Info" /><br/>          
 
             <input type="submit" name="nappi" value="AddNewIngredients"/>
         </form>
-
+        <br/>
         <form method="POST" action="" >
-            <select name="SmoothieDeleteId"> 
+            <label for="del">Poista smoothie</label><br/>
+            <select id="del" name="SmoothieDeleteId"> 
                 <option th:each="smoothie: ${smoothies}" th:value="${smoothie.id}" th:text="${smoothie.nimi}">smoothie</option></select>
             <input type="submit" name="nappi" value="Poista"/>
         </form>
